@@ -1,14 +1,14 @@
 //
-//  snakeUITests.swift
-//  snakeUITests
+//  snake2UITests.swift
+//  snake2UITests
 //
-//  Created by  Igor Nadiein on 11.05.2020.
+//  Created by  Igor Nadiein on 16.05.2020.
 //  Copyright © 2020  Igor Nadiein. All rights reserved.
 //
 
 import XCTest
 
-class snakeUITests: XCTestCase {
+class snake2UITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

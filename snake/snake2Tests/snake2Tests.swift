@@ -1,15 +1,15 @@
 //
-//  snakeTests.swift
-//  snakeTests
+//  snake2Tests.swift
+//  snake2Tests
 //
-//  Created by  Igor Nadiein on 11.05.2020.
+//  Created by  Igor Nadiein on 16.05.2020.
 //  Copyright © 2020  Igor Nadiein. All rights reserved.
 //
 
 import XCTest
-@testable import snake
+@testable import snake2
 
-class snakeTests: XCTestCase {
+class snake2Tests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

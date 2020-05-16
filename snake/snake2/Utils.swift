@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Utils.swift
 //  snake
 //
 //  Created by  Igor Nadiein on 11.05.2020.
@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+class Utils {
+    static func generateRandomNumber(max:Int) -> Int { return Int.random(in: 0...max) }
+}
