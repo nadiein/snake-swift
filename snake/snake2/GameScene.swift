@@ -12,24 +12,31 @@ import GameplayKit
 class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
-        for i in 1...50 {
-//            let path = UIBezierPath()
-//            path.move(to: <#T##CGPoint#>(x:i*5, y:i*5))
-//            path.addLine(to: <#T##CGPoint#>(x:i*5, y:i*5))
-//            path.close()
-            let grid = SKSpriteNode(color: .red, size: CGSize(width: self.size.width, height: 1))
-            grid.position = CGPoint(x:0, y:i*50)
-            self.addChild(grid)
+        self.anchorPoint = .zero // place the main axis for drawing grid to coords X/Y = 0
+        
+        let GRID_STEP = 50
+        let sizeH = self.size.height // vertical available screen size - float number
+        let sizeW = self.size.width // horizontal available screen size
+        
+        for i in 1...50 { // vertical grid
+            let node = SKShapeNode()
+            let path = CGMutablePath()
+            
+            path.move(to: CGPoint(x: i * GRID_STEP, y: Int(sizeH))) // cgpoint works with ints
+            path.addLine(to: CGPoint(x: i*50, y: 0))
+            node.path = path
+            node.strokeColor = SKColor.white
+            addChild(node)
         }
         
-        for i in 1...20 {
-//            let path = UIBezierPath()
-//            path.move(to: <#T##CGPoint#>(x:i*5, y:i*5))
-//            path.addLine(to: <#T##CGPoint#>(x:i*5, y:i*5))
-//            path.close()
-            let grid = SKSpriteNode(color: .red, size: CGSize(width: 1, height: self.size.height))
-            grid.position = CGPoint(x:i*50, y:0)
-            self.addChild(grid)
+        for i in 1...50 { // horizontal grid
+            let node = SKShapeNode()
+            let path = CGMutablePath()
+            path.move(to: CGPoint(x: Int(sizeW), y: i * GRID_STEP))
+            path.addLine(to: CGPoint(x: 0, y: i*50))
+            node.path = path
+            node.strokeColor = SKColor.white
+            addChild(node)
         }
     }
 }
